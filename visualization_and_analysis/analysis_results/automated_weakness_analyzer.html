@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Model Weakness Analysis Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1 { color: #333366; }
+        h2 { color: #336699; margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        h3 { color: #3377AA; }
+        h4 { color: #3388BB; margin-bottom: 10px; }
+        table { border-collapse: collapse; margin: 15px 0; width: 100%; }
+        th { background-color: #f2f2f2; text-align: left; padding: 8px; }
+        td { padding: 8px; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .llm-report { background-color: #f8f8ff; border: 1px solid #e0e0e8; 
+                     padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .report-content { line-height: 1.5; }
+        .error { color: #cc0000; background-color: #ffeeee; padding: 10px; border-radius: 5px; }
+        .footer { margin-top: 30px; font-size: 0.8em; color: #666; border-top: 1px solid #ccc; padding-top: 10px; }
+        ul { margin-top: 5px; }
+        .model-summary { background-color: #f0f8ff; padding: 10px; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Model Weakness Analysis Report</h1>
+    <p>Generated on: 2025-09-20 22:47:40</p>
+    <p>Threshold for significant anomalies: 3</p>
+    <p>LLM model used for analysing: deepseek-v3-1-250821</p>
+    <p>Total models analyzed: 0</p>
+    <hr>
+<h2>Model: Meta-Llama-3.1-70B-Instruct</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: Meta-Llama-3.1-70B-Instruct</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+        .emphasis { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Meta-Llama-3.1-70B-Instruct</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model ranks <span class="emphasis">16th out of 21</span> in the overall comparison, indicating a <span class="emphasis">below-average performance</span> relative to peers. While it demonstrates notable strengths in specific domains (107 nodes performing better than its average), it also exhibits significant weaknesses across 52 nodes, particularly in technical and scientific areas. The distribution of performance anomalies suggests a <span class="emphasis">specialized but inconsistent capability profile</span>.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li class="strength"><span class="emphasis">Writing Domains</span>: Exceptional performance in <em>Tongue Twisters</em> (ranking: 1, difference: -15), <em>Email Writing</em> (ranking: 3, difference: -13), and <em>Creative Fragment Writing</em> (ranking: 8, difference: -8).</li>
+    <li class="strength"><span class="emphasis">Role-Playing and Reasoning</span>: Strong results in <em>Abstract Concepts</em> (ranking: 8, difference: -8) and <em>Logical Reasoning</em> (ranking: 9, difference: -7).</li>
+    <li class="strength"><span class="emphasis">Functional Tasks</span>: Competence in <em>Argumentative Writing</em> and <em>Official Document Drafting</em> (e.g., contracts).</li>
+</ul>
+
+<h2>3. Key Weaknesses</h2>
+<ul>
+    <li class="weakness"><span class="emphasis">Technical Coding Domains</span>: Poor performance in <em>PHP</em>, <em>Microservices</em>, and <em>Responsive Design</em> (ranking: 20, difference: +4).</li>
+    <li class="weakness"><span class="emphasis">Advanced Sciences</span>: Struggles in <em>Physics</em> (Aerodynamics, Thermodynamics) and <em>Engineering</em> (Aerospace, Cybersecurity).</li>
+    <li class="weakness"><span class="emphasis">Mathematical Analysis</span>: Weak in <em>Limits</em> and related subfields (ranking: 20, difference: +4).</li>
+</ul>
+
+<h2>4. Hypotheses for Anomalies</h2>
+<ul>
+    <li><span class="emphasis">Training Data Bias</span>: The model may have been trained on a corpus rich in linguistic and creative content but lacking depth in technical, scientific, and engineering domains.</li>
+    <li><span class="emphasis">Instruction Tuning Focus</span>: Fine-tuning likely prioritized everyday and functional writing tasks over niche technical applications.</li>
+    <li><span class="emphasis">Complex Reasoning Gaps</span>: Weaknesses in synthesis/evaluation (e.g., Ethical Reasoning) suggest limitations in handling multi-step, abstract problems.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<ul>
+    <li><span class="emphasis">Augment Training Data</span>: Incorporate more technical textbooks, code repositories, and scientific literature to balance domain coverage.</li>
+    <li><span class="emphasis">Targeted Fine-Tuning</span>: Prioritize weak areas like PHP, cybersecurity, and thermodynamics during the next instruction-tuning phase.</li>
+    <li><span class="emphasis">Hybrid Approach</span>: Integrate retrieval-augmented generation (RAG) for technical queries to compensate for knowledge gaps.</li>
+    <li><span class="emphasis">Evaluation Expansion</span>: Include more technical benchmarks in future assessments to avoid overfitting to non-technical strengths.</li>
+</ul>
+
+</body>
+</html></div>
+</div>
+<h2>Model: Meta-Llama-3.1-8B-Instruct</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: Meta-Llama-3.1-8B-Instruct</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #DC143C; }
+        .neutral { color: #696969; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: Meta-Llama-3.1-8B-Instruct</h1>
+
+    <h2>1. Overall Assessment</h2>
+    <p>The model ranks <strong>18th out of 21</strong> in the overall comparison, indicating <span class="weakness">below-average performance</span> relative to peers. However, it exhibits <span class="strength">significant strengths</span> in specific domains, with <strong>78 nodes</strong> performing better than its average ranking and <strong>0 nodes</strong> performing significantly worse.</p>
+
+    <h2>2. Areas of Significant Strength</h2>
+    <ul>
+        <li><span class="strength"><strong>Functional Writing:</strong> Excels in <em>Resume Writing</em> (ranking difference: -15) and <em>Email Writing</em> (-13), suggesting strong proficiency in structured, goal-oriented communication.</span></li>
+        <li><span class="strength"><strong>Creative & Abstract Reasoning:</strong> Performs well in <em>Abstract Reasoning</em> (-7) and <em>Humorous/Inspirational Writing</em> (-7), indicating robust capabilities in imaginative and non-linear thinking.</span></li>
+        <li><span class="strength"><strong>Role-Play & Emotional Themes:</strong> Shows strength in <em>Healing Style</em> (-6) and <em>Erotic Emotional Themes</em> (-6), highlighting adeptness in nuanced interpersonal simulation.</span></li>
+    </ul>
+
+    <h2>3. Key Weaknesses</h2>
+    <ul>
+        <li><span class="neutral">No <em>significant</em> weaknesses were detected (0 nodes underperform beyond the threshold).</span></li>
+        <li><span class="weakness">However, the model's overall ranking (18/21) suggests <strong>generalized mediocrity</strong> across many unevaluated or non-anomalous tasks, likely lagging in areas like logical reasoning, STEM, or complex instruction following.</span></li>
+    </ul>
+
+    <h2>4. Hypotheses for Anomalies</h2>
+    <ul>
+        <li><strong>Training Data Bias:</strong> Strengths in functional/creative writing and emotional role-play may stem from <em>over-representation</em> of corresponding data types (e.g., conversational, literary, or creative corpora).</li>
+        <li><strong>Architecture Optimization:</strong> The 8B parameter count may be insufficient for balanced performance across diverse domains, favoring narrower strengths over broad competence.</li>
+        <li><strong>Instruction-Tuning Focus:</strong> The "Instruct" variant may have been fine-tuned heavily on user-interaction tasks (e.g., emails, role-play), neglecting other domains.</li>
+    </ul>
+
+    <h2>5. Recommendations for Improvement</h2>
+    <ul>
+        <li><strong>Expand Training Diversity:</strong> Incorporate more data from weaker domains (e.g., technical, scientific, or analytical content) to reduce performance variance.</li>
+        <li><strong>Balanced Fine-Tuning:</strong> Adjust instruction-tuning protocols to prioritize underperforming areas without degrading existing strengths.</li>
+        <li><strong>Hybrid Approaches:</strong> Explore model ensembling or retrieval-augmented generation (RAG) for low-ranking tasks to compensate for inherent limitations.</li>
+        <li><strong>Threshold Reevaluation:</strong> Investigate non-anomalous nodes for <em>moderate</em> weaknesses (differences < |3|) that may collectively drag down the overall rank.</li>
+    </ul>
+</body>
+</html></div>
+</div>
+<h2>Model: Mistral-7B-Instruct-v0.3</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistral-7B-Instruct-v0.3 Performance Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #DC143C; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Mistral-7B-Instruct-v0.3</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model demonstrates a <strong>significantly subpar overall performance</strong>, ranking 20th out of 21 models in the benchmark. With a threshold of 3 for significant anomalies, it exhibits <strong>88 nodes with better-than-expected performance</strong> and <strong>no significantly worse-performing nodes</strong>. This indicates that while the model has notable strengths in specific domains, its general capabilities lag behind most peers.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<p class="strength">The model excels in several specialized domains, with performance substantially above its overall ranking:</p>
+<ul>
+    <li><strong>Entertainment/Travel Writing</strong> (Difference: -10) – Shows strong capability in generating engaging, everyday content.</li>
+    <li><strong>Comedy and Humorous Themes</strong> (Differences: -9 to -7) – Demonstrates adeptness in humor, absurd comedy, and sitcom-style roleplay.</li>
+    <li><strong>Technical Engineering & Computer Hardware</strong> (Difference: -8) – Unexpected strength in technical knowledge domains.</li>
+    <li><strong>Psychological Thriller and Emotional/Erotic Themes</strong> (Difference: -7) – Performs well in nuanced, emotionally charged narratives.</li>
+    <li><strong>Entity Extraction in Writing Post-processing</strong> (Difference: -7) – Shows competency in analytical writing tasks.</li>
+</ul>
+
+<h2>3. Key Weaknesses</h2>
+<p class="weakness">While no nodes perform significantly worse than expected, the model's <strong>consistently low overall ranking</strong> indicates broad weaknesses across most evaluated domains not covered by the strength nodes. The model likely struggles with:</p>
+<ul>
+    <li>General reasoning and comprehension tasks</li>
+    <li>Tasks requiring broad world knowledge</li>
+    <li>Consistent performance across diverse domains</li>
+    <li>Mathematical and logical reasoning</li>
+    <li>Scientific and academic content outside its strength areas</li>
+</ul>
+
+<h2>4. Hypotheses for Performance Anomalies</h2>
+<p>The disparity between specific strengths and overall weak performance suggests:</p>
+<ul>
+    <li>The training data may be <strong>heavily weighted toward entertainment, creative writing, and specific technical domains</strong></li>
+    <li><strong>Insufficient broad-base training</strong> across academic and general knowledge domains</li>
+    <li>Potential <strong>overfitting to specific pattern types</strong> present in its strength areas</li>
+    <li>Instruction tuning may have <strong>over-emphasized creative applications</strong> at the expense of general capability</li>
+    <li>The 7B parameter count might be <strong>insufficient for well-rounded performance</strong> compared to larger models</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<p>To address the performance gaps:</p>
+<ul>
+    <li><strong>Diversify training data</strong> to include more academic, scientific, and general knowledge content</li>
+    <li>Implement <strong>balanced instruction tuning</strong> that doesn't over-specialize in creative domains</li>
+    <li>Consider <strong>model scaling</strong> or <strong>specialized ensemble approaches</strong> for different task types</li>
+    <li>Develop <strong>targeted reinforcement learning</strong> for weak domains identified in broader benchmarks</li>
+    <li>Create <strong>modular extensions</strong> that can be activated for specific domain expertise without compromising general performance</li>
+    <li>Leverage the model's strengths in <strong>specialized applications</strong> while using more capable models for general tasks</li>
+</ul>
+
+</body>
+</html></div>
+</div>
+<h2>Model: Phi-4-mini-instruct</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phi-4-mini-instruct Performance Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2 { color: #333; }
+        .strength { color: #28a745; }
+        .weakness { color: #dc3545; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: Phi-4-mini-instruct</h1>
+
+    <h2>1. Overall Assessment</h2>
+    <p><strong>Phi-4-mini-instruct</strong> ranks <strong>21st out of 21</strong> models in the overall comparison, indicating it is the <em>lowest-performing model</em> in this benchmark. While it demonstrates notable strengths in specific domains, its generalized performance lags significantly behind peers.</p>
+
+    <h2>2. Areas of Significant Strength</h2>
+    <p class="strength">The model exhibits <strong>71 nodes</strong> with performance <em>significantly better</em> than its overall ranking, suggesting specialized competency in:</p>
+    <ul>
+        <li><strong>Mathematics (Real Analysis, Limits):</strong> Ranking improved by 9 and 8 positions respectively.</li>
+        <li><strong>Roleplay (Analytical Evaluation and Feedback):</strong> Improved by 9 positions.</li>
+        <li><strong>Reasoning (Analogical, Legal, Bayesian):</strong> Improved by 8 and 7 positions.</li>
+        <li><strong>Writing (Creative, Argumentative, Grammar, Literary Analysis):</strong> Consistently improved by 7 positions.</li>
+    </ul>
+    <p>These strengths indicate a model potentially fine-tuned or optimized for <em>analytical, structured, and creative tasks</em>.</p>
+
+    <h2>3. Key Weaknesses</h2>
+    <p class="weakness">No nodes perform <em>significantly worse</em> than the overall ranking, implying that weaknesses are <strong>generalized</strong> rather than domain-specific. The model struggles across most benchmarks, failing to excel outside its niche strengths.</p>
+
+    <h2>4. Hypotheses for Anomalies</h2>
+    <ul>
+        <li><strong>Over-Specialization:</strong> The model may have been heavily optimized for specific analytical and creative tasks, at the expense of broad-based capability.</li>
+        <li><strong>Data Bias:</strong> Training data might be skewed towards mathematics, reasoning, and writing, limiting performance in other domains.</li>
+        <li><strong>Architecture Constraints:</strong> As a "mini" model, parameter limitations could restrict its ability to generalize across diverse tasks.</li>
+        <li><strong>Benchmark Misalignment:</strong> Evaluation benchmarks may emphasize areas where the model is weaker, not fully capturing its specialized strengths.</li>
+    </ul>
+
+    <h2>5. Recommendations for Improvement</h2>
+    <ul>
+        <li><strong>Broaden Training Data:</strong> Incorporate more diverse datasets to improve generalization beyond current strengths.</li>
+        <li><strong>Balance Fine-Tuning:</strong> Reduce over-specialization by balancing fine-tuning across a wider range of tasks.</li>
+        <li><strong>Ensemble Approaches:</strong> Combine with complementary models to leverage strengths and mitigate weaknesses.</li>
+        <li><strong>Hyperparameter Tuning:</strong> Revisit optimization strategies to better balance specialized vs. general performance.</li>
+        <li><strong>Task-Specific Deployment:</strong> Leverage the model primarily in domains where it excels (e.g., analytical writing, reasoning tasks).</li>
+    </ul>
+</body>
+</html></div>
+</div>
+<h2>Model: QwQ-32B</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'># Performance Analysis Report: QwQ-32B Model
+
+## Overall Assessment
+The QwQ-32B model demonstrates **strong overall performance**, ranking 6th out of 21 models in the comprehensive evaluation. With a threshold of 3 for significant anomalies, the model shows **substantially more strengths (139 nodes)** than weaknesses (72 nodes), indicating a generally capable architecture with specific, concentrated areas for improvement.
+
+## Areas of Significant Strength
+The model excels in multiple domains, particularly showing exceptional performance (ranking 1st) in:
+
+- **Risk Assessment** within cognitive synthesis/evaluation
+- **Arts and Crafts** in disciplinary knowledge
+- **Ballistics** under physics/natural sciences
+- **Social Reasoning** and multiple reasoning methods including:
+  - Classification Reasoning
+  - Symbolic Logical Reasoning
+- **Creative thinking modes** including Concept Reorganization and Creative Exploration
+
+## Key Weaknesses Requiring Improvement
+The model underperforms significantly (ranking 10th) in several areas:
+
+- **Domain-specific programming languages**:
+  - Excel/Spreadsheets
+  - GDScript for game development
+  - Batch scripting
+  - PHP
+
+- **Specific academic disciplines**:
+  - Linguistics and Religious Studies
+  - Abstract Algebra and Mathematical Analysis
+
+- **Social Awareness Expression** within cognitive evaluation
+
+## Hypothesized Causes of Anomalies
+1. **Training data distribution imbalance** - Likely insufficient exposure to domain-specific programming languages and certain humanities subjects
+2. **Architectural biases** - The model may have stronger inherent capabilities for symbolic and creative reasoning than for specific technical domains
+3. **Evaluation methodology** - Some weaknesses may reflect specific benchmark characteristics rather than fundamental model deficiencies
+4. **Parameter allocation** - The 32B parameter count might be optimally distributed for reasoning tasks at the expense of some specialized knowledge areas
+
+## Recommendations for Improvement
+1. **Targeted training** on underrepresented domains, particularly:
+   - Domain-specific programming languages
+   - Linguistic and religious studies corpora
+   - Advanced mathematical concepts
+
+2. **Fine-tuning strategy** focusing on:
+   - Social awareness expression tasks
+   - Technical documentation comprehension
+   - Specialized academic content
+
+3. **Architectural consideration** for future versions:
+   - Explore module-specific enhancements for weaker domains
+   - Consider balanced multi-task learning objectives
+
+4. **Evaluation expansion** to better understand:
+   - Whether weaknesses reflect capability gaps or evaluation biases
+   - Real-world performance implications of identified anomalies
+
+*Note: Despite the identified weaknesses, QwQ-32B remains a competitively performing model overall, ranking in the top 29% of evaluated systems.*</div>
+</div>
+<h2>Model: Qwen2.5-32B-Instruct</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analysis: Qwen2.5-32B-Instruct</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+        .recommendation { background-color: #f8f9fa; padding: 15px; border-left: 4px solid #4CAF50; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: Qwen2.5-32B-Instruct</h1>
+    
+    <h2>1. Overall Assessment</h2>
+    <p>The model demonstrates a <strong>mixed performance profile</strong>, ranking 15th out of 21 models in the overall comparison. While it shows notable strengths in specific domains—particularly writing and certain applied tasks—it underperforms significantly in technical and coding-related areas. The presence of 58 nodes with better-than-expected performance and 53 with worse performance indicates a highly <strong>uneven capability distribution</strong>.</p>
+    
+    <h2>2. Areas of Significant Strength</h2>
+    <p class="strength">The model excels in:</p>
+    <ul>
+        <li><strong>Writing Domains</strong>: Particularly in functional writing (e.g., Email Writing, Teaching/Grammar, Language Learning) and creative conceptualization (Terminology Analysis).</li>
+        <li><strong>Applied Mathematics</strong>: Shows strong performance in problem-solving contexts like word problems and game theory applications.</li>
+        <li><strong>Roleplay & Everyday Writing</strong>: Performs well in realistic themes (e.g., Cooking) and entertainment contexts (e.g., Jokes).</li>
+        <li><strong>Niche Technical Tasks</strong>: Surprisingly excels in domain-specific languages like Excel, indicating good structured data handling.</li>
+    </ul>
+    
+    <h2>3. Key Weaknesses</h2>
+    <p class="weakness">The model struggles significantly in:</p>
+    <ul>
+        <li><strong>General-Purpose Programming</strong>: Underperforms in languages like C and Go, as well as in back-end development concepts (Concurrent Programming, Microservices).</li>
+        <li><strong>AI & Technical Domains</strong>: Surprisingly weak in Artificial Intelligence, Natural Language Processing, and embedded systems (Firmware Development).</li>
+        <li><strong>Data Processing & Tool Usage</strong>: Poor performance in Database tasks and Version Control, indicating gaps in modern software engineering practices.</li>
+        <li><strong>Applied Sciences</strong>: Struggles in interdisciplinary areas like Social Services, suggesting limited real-world contextual understanding beyond core domains.</li>
+    </ul>
+    
+    <h2>4. Hypotheses on Anomalies</h2>
+    <ul>
+        <li><strong>Training Data Bias</strong>: The model may have been trained on a corpus over-representing humanities and writing, with less emphasis on cutting-edge coding practices or specialized technical domains.</li>
+        <li><strong>Instruction Tuning Gaps</strong>: Fine-tuning may have prioritized creative and functional writing over complex technical tasks, leading to imbalanced capabilities.</li>
+        <li><strong>Context Length Limitations</strong>: Technical tasks often require longer context retention, which the model may struggle with compared to more concise writing tasks.</li>
+        <li><strong>Lack of Specialized Knowledge</strong>: Weak performance in AI/NLP suggests the model may not have been exposed to state-of-the-art research or technical documentation in these fields.</li>
+    </ul>
+    
+    <h2>5. Recommendations for Improvement</h2>
+    <div class="recommendation">
+        <ul>
+            <li><strong>Enhance Technical Training Data</strong>: Incorporate more diverse and advanced coding examples, documentation, and real-world technical problem-solving scenarios.</li>
+            <li><strong>Domain-Specific Fine-Tuning</strong>: Conduct additional instruction tuning focused on underperforming areas like concurrent programming, database management, and AI applications.</li>
+            <li><strong>Balance Creative and Technical Tasks</strong>: Ensure future training runs maintain the model's writing strengths while addressing technical weaknesses through balanced data sampling.</li>
+            <li><strong>Implement Targeted Evaluations</strong> Regularly test the model on a benchmark suite covering its weak areas to track improvement and identify new gaps.</li>
+            <li><strong>Explore Hybrid Approaches</strong>: Consider integrating external tools or APIs for specific technical tasks where the model consistently underperforms.</li>
+        </ul>
+    </div>
+</body>
+</html></div>
+</div>
+<h2>Model: Qwen2.5-72B-Instruct</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: Qwen2.5-72B-Instruct</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2 { color: #333; }
+        ul { margin: 10px 0; }
+        li { margin-bottom: 5px; }
+        .strength { color: #28a745; }
+        .weakness { color: #dc3545; }
+        .recommendation { background-color: #f8f9fa; padding: 15px; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Qwen2.5-72B-Instruct</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model <strong>Qwen2.5-72B-Instruct</strong> ranks <strong>12th out of 21</strong> models in the overall comparison, indicating a <strong>mid-tier performance</strong> with notable inconsistencies across different domains. While it demonstrates exceptional capabilities in specific areas (35 nodes with significantly better performance), it underperforms in a majority of tasks (65 nodes with worse performance), suggesting a lack of balanced proficiency.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li class="strength"><strong>Writing Domains:</strong> Excels in <em>Functional Writing</em>, particularly in <em>Official Document Writing</em> (e.g., Immigration Applications, Scholarship essays) and <em>Argumentative Writing</em>, ranking as high as 2nd–5th (differences of -7 to -10).</li>
+    <li class="strength"><strong>Reasoning:</strong> Strong performance in <em>Deductive Reasoning</em> and <em>Puzzle Solving</em> (ranking 3rd, difference -9), indicating robust logical capabilities.</li>
+    <li class="strength"><strong>Knowledge Simplification:</strong> Effective in <em>Simplified Explanation</em> tasks (ranking 5th, difference -7), suggesting an ability to distill complex information clearly.</li>
+</ul>
+
+<h2>3. Key Weaknesses</h2>
+<ul>
+    <li class="weakness"><strong>Technical Domains:</strong> Poor performance in <em>Embedded Development</em> and <em>Hardware Technology</em> (ranking 16th, difference +4), highlighting gaps in specialized technical knowledge.</li>
+    <li class="weakness"><strong>Scientific & Cultural Knowledge:</strong> Struggles in <em>Chemistry</em>, <em>Literature</em> (e.g., Novels), and <em>Arts and Culture</em> (ranking 16th, difference +4), indicating limited depth in these disciplines.</li>
+    <li class="weakness"><strong>Reasoning Subtypes:</strong> Underperforms in <em>Causal Reasoning</em>, <em>Spatial Reasoning</em> (e.g., Topological Relationships), and <em>Legal Reasoning</em> (ranking 16th, difference +4), suggesting weaknesses in nuanced reasoning tasks.</li>
+    <li class="weakness"><strong>Roleplay & Creativity:</strong> Weak in <em>Experimental Style</em> (e.g., Eccentric) and <em>Analytical Social Issues</em> (ranking 16th, difference +4), reflecting limitations in creative and adaptive response generation.</li>
+</ul>
+
+<h2>4. Hypotheses on Causes of Anomalies</h2>
+<ul>
+    <li><strong>Training Data Bias:</strong> The model may have been trained on datasets over-representing formal writing and logical puzzles, while lacking sufficient coverage of technical, scientific, and creative content.</li>
+    <li><strong>Architectural Limitations:</strong> The model might struggle with tasks requiring deep domain-specific knowledge or multi-step causal reasoning due to inherent architectural constraints.</li>
+    <li><strong>Fine-Tuning Focus:</strong> Fine-tuning may have prioritized practical applications (e.g., professional writing) over niche or creative tasks, leading to imbalanced capabilities.</li>
+    <li><strong>Generalization Issues:</strong> Strengths in structured tasks (e.g., deductive reasoning) may not generalize to less structured domains (e.g., open-ended roleplay or technical problem-solving).</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<div class="recommendation">
+    <ul>
+        <li><strong>Diversify Training Data:</strong> Incorporate more datasets covering hardware technology, natural sciences, literature, and creative writing to address knowledge gaps.</li>
+        <li><strong>Enhanced Fine-Tuning:</strong> Prioritize fine-tuning on weak areas like causal reasoning, spatial reasoning, and legal domains using curated datasets.</li>
+        <li><strong>Task-Specific Optimization:</strong> Develop specialized modules or prompts for technical and creative tasks to improve performance without compromising existing strengths.</li>
+        <li><strong>Robustness Testing:</strong> Expand evaluation to include more edge cases in weak domains to identify and mitigate failure modes.</li>
+        <li><strong>Hybrid Approaches:</strong> Explore integration with external tools (e.g., calculators for applied mathematics, knowledge graphs for chemistry) to augment capabilities in low-performance areas.</li>
+    </ul>
+</div>
+
+</body>
+</html></div>
+</div>
+<h2>Model: Qwen2.5-7B-Instruct</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: Qwen2.5-7B-Instruct</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        ul { margin-left: 20px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Qwen2.5-7B-Instruct</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model ranks <strong>17th out of 21</strong> in the overall comparison, indicating below-average performance relative to peers. However, it demonstrates notable <span class="strength"><strong>strengths in specific domains</strong></span> (72 nodes performing better than its average rank) while also showing <span class="weakness"><strong>significant weaknesses</strong></span> in others (15 underperforming nodes).</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li><strong>Writing Domains:</strong> Excels in <em>News Reporting</em> (rank 7, difference -10) and <em>Experimental Writing</em> (rank 10, difference -7).</li>
+    <li><strong>Mathematics:</strong> Strong performance in <em>Function Graphing</em> (rank 8, difference -9) and <em>Category Theory</em> (rank 11, difference -6).</li>
+    <li><strong>Roleplay:</strong> Effective in emotional and experimental themes (e.g., <em>Erotic</em> and <em>Sensitive</em> themes, rank 11, difference -6).</li>
+</ul>
+
+<h2>3. Key Weaknesses Needing Improvement</h2>
+<ul>
+    <li><strong>Coding & Technical Tasks:</strong> Poor performance in <em>SQL</em>, <em>TypeScript</em>, and <em>Database Integration</em> (all rank 21, difference +4).</li>
+    <li><strong>Knowledge Domains:</strong> Struggles in <em>Applied Sciences</em> (e.g., Transportation), <em>Arts & Culture</em> (Design, Fine Arts), and <em>Natural Sciences</em> (Chemistry).</li>
+    <li><strong>Roleplay & Interactive Tasks:</strong> Underperforms in <em>Cross-Media</em> and <em>Interactive Text Game</em> scenarios (rank 21, difference +4).</li>
+</ul>
+
+<h2>4. Hypotheses for Anomalies</h2>
+<ul>
+    <li><strong>Training Data Bias:</strong> Strengths in writing and mathematics suggest extensive training in humanities and theoretical subjects, while technical/coding domains may have been underrepresented.</li>
+    <li><strong>Task Complexity:</strong> Weaknesses in interactive and cross-media tasks may stem from limited exposure to multi-modal or real-time interaction data during training.</li>
+    <li><strong>Domain Specialization:</strong> The model appears optimized for creative and abstract reasoning but lacks depth in applied sciences and specialized programming languages.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<ul>
+    <li><strong>Enhance Technical Training:</strong> Incorporate more diverse datasets for coding languages (e.g., SQL, TypeScript) and back-end development tasks.</li>
+    <li><strong>Broaden Knowledge Coverage:</strong> Improve fine-tuning in applied sciences, arts, and chemistry to address knowledge gaps.</li>
+    <li><strong>Interactive Task Training:</strong> Integrate cross-media and interactive dialogue datasets to boost performance in roleplay and game-based scenarios.</li>
+    <li><strong>Balanced Curriculum:</strong> Ensure future training cycles equally prioritize creative, technical, and scientific domains to reduce performance disparities.</li>
+</ul>
+
+</body>
+</html></div>
+</div>
+<h2>Model: Qwen3-32B</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: Qwen3-32B</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: green; }
+        .weakness { color: red; }
+        .recommendation { background-color: #f9f9f9; padding: 10px; border-left: 4px solid #ccc; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Qwen3-32B</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model demonstrates <strong>strong overall performance</strong>, ranking <strong>2nd out of 21 models</strong> in the benchmark. This indicates it is highly competitive and excels in the majority of evaluated domains. However, the presence of <strong>211 nodes with significant performance anomalies</strong> (all worse-performing) suggests notable inconsistencies in specialized areas.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li>No nodes were identified as <em>significantly better-performing</em> beyond the threshold, implying the model's strengths are broadly distributed and consistent rather than exceptionally dominant in any single niche.</li>
+    <li>Its high overall ranking (2nd) suggests robust capabilities across a wide range of tasks not captured in the anomaly list.</li>
+</ul>
+
+<h2>3. Key Weaknesses Needing Improvement</h2>
+<ul>
+    <li class="weakness"><strong>Knowledge-based tasks</strong>: Underperformance in nodes under <code>root.knowledge</code>, including <em>Fact Recall</em> and <em>Applied Analysis</em>, indicates gaps in retrieving and applying factual information.</li>
+    <li class="weakness"><strong>Coding and technical domains</strong>: Weaknesses in <em>XML</em>, <em>Tool Usage (IDE Configuration)</em>, and <em>Artificial Intelligence/NLP</em> tasks suggest limitations in structured data handling, practical coding assistance, and AI-specific reasoning.</li>
+    <li class="weakness"><strong>Self-assessment and auxiliary functions</em></strong>: Poor performance in <em>Self-Assessment</em> tasks may reflect an inability to accurately evaluate its own outputs or confidence.</li>
+</ul>
+
+<h2>4. Hypotheses on Causes of Anomalies</h2>
+<ul>
+    <li><strong>Training data gaps</strong>: The model may lack sufficient exposure to structured markup languages (e.g., XML), detailed technical documentation, or curated knowledge bases, leading to underperformance in fact-heavy or syntax-specific tasks.</li>
+    <li><strong>Architectural limitations</strong>: The 32B parameter size, while large, might struggle with highly specialized or multi-step reasoning required in tool usage and synthesis/evaluation tasks.</li>
+    <li><strong>Evaluation bias</strong>: Some anomalies (e.g., in <em>Self-Assessment</em>) could stem from benchmark design rather than model flaws, as evaluating self-awareness metrics is inherently challenging.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<div class="recommendation">
+    <ul>
+        <li><strong>Enhance knowledge integration</strong>: Fine-tune on high-quality, fact-dense corpora (e.g., textbooks, technical manuals) to improve performance in <em>knowledge</em> and <em>fact recall</em> nodes.</li>
+        <li><strong>Expand coding diversity</strong>: Incorporate more data from markup languages, IDE configurations, and AI-specific code repositories to bolster technical domain performance.</li>
+        <li><strong>Implement confidence calibration</strong>: Add reinforcement learning or self-reflection mechanisms to improve accuracy in <em>Self-Assessment</em> tasks.</li>
+        <li><strong>Prioritize anomaly nodes</strong>: Focus iterative training on the 211 underperforming nodes, leveraging targeted datasets and adversarial examples.</li>
+    </ul>
+</div>
+
+</body>
+</html></div>
+</div>
+<h2>Model: Qwen3-8B</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: Qwen3-8B</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        .strength { color: #27ae60; }
+        .weakness { color: #e74c3c; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: Qwen3-8B</h1>
+
+    <h2>1. Overall Assessment</h2>
+    <p>Qwen3-8B demonstrates a <strong>mid-tier performance</strong>, ranking 8th out of 21 models. While it shows notable strengths in several specialized domains, it exhibits significant weaknesses in others, indicating a <em>domain-specific performance imbalance</em>.</p>
+
+    <h2>2. Areas of Significant Strength</h2>
+    <p class="strength"><strong>Exceptional performance observed in:</strong></p>
+    <ul>
+        <li><strong>Mathematics:</strong> Dominates in Algebra, Number Theory, Probability, and Discrete Mathematics (ranking 1st).</li>
+        <li><strong>Applied Sciences:</strong> Particularly strong in Education-related tasks.</li>
+        <li><strong>Logical Reasoning:</strong> Excels in Game Theory and Set Theory problems.</li>
+    </ul>
+    <p>These areas show a performance difference of <strong>-7</strong> from its average, far exceeding the significance threshold.</p>
+
+    <h2>3. Key Weaknesses</h2>
+    <p class="weakness"><strong>Notable underperformance in:</strong></p>
+    <ul>
+        <li><strong>Assembly Language Programming:</strong> Significantly lags (ranking 12th).</li>
+        <li><strong>Basic Cognitive Tasks:</strong> Struggles with Conceptual Understanding.</li>
+        <li><strong>Arts & Culture:</strong> Poor in Culinary and Performing Arts domains.</li>
+        <li><strong>Natural Sciences:</strong> Weak in Chemistry, Biology (Zoology), and Astrophysics.</li>
+        <li><strong>Social Sciences:</strong> Underperforms in Current Affairs and Politics.</li>
+    </ul>
+    <p>These domains show a <strong>+4 difference</strong> from its average rank, indicating substantial room for improvement.</p>
+
+    <h2>4. Hypotheses for Anomalies</h2>
+    <ul>
+        <li><strong>Training Data Bias:</strong> The model was likely trained on data rich in formal sciences but lacking in arts, current events, and low-level programming.</li>
+        <li><strong>Architectural Focus:</strong> May be optimized for structured, logical problems over creative or descriptive tasks.</li>
+        <li><strong>Tokenization Scheme:</strong> Could be inefficient for processing assembly language syntax or cultural context.</li>
+        <li><strong>Evaluation Metric Misalignment:</strong> Some weaknesses might stem from benchmark design rather than model capability.</li>
+    </ul>
+
+    <h2>5. Recommendations for Improvement</h2>
+    <ul>
+        <li><strong>Data Augmentation:</strong> Incorporate more diverse training data covering arts, recent events, and niche programming languages.</li>
+        <li><strong>Fine-tuning:</strong> Implement targeted fine-tuning on underperforming domains using curated datasets.</li>
+        <li><strong>Prompt Engineering:</strong> Develop specialized prompts to better handle weak areas during inference.</li>
+        <li><strong>Hybrid Approach:</strong> Consider integrating external knowledge bases for dynamic domains like current affairs.</li>
+        <li><strong>Regular Re-evaluation:</strong> Establish continuous assessment cycles to monitor improvement in weak areas.</li>
+    </ul>
+</body>
+</html></div>
+</div>
+<h2>Model: anthropic.claude-3-7-sonnet-20250219-v1_0</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Performance Analysis: anthropic.claude-3-7-sonnet-20250219-v1_0</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+        .recommendation { background-color: #f0f8ff; padding: 15px; border-left: 4px solid #4682B4; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: anthropic.claude-3-7-sonnet-20250219-v1_0</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model demonstrates a <strong>solid mid-tier performance</strong>, ranking 7th out of 21 models in the overall comparison. With a total of 93 nodes showing better-than-expected performance and 82 nodes underperforming, the model exhibits a <em>notable but balanced distribution of strengths and weaknesses</em>. The overall ranking suggests competent general capabilities with specific areas of excellence and deficiency.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<p class="strength">The model shows <strong>exceptional performance</strong> in several specialized domains, consistently achieving 1st place rankings (difference of -6) in:</p>
+<ul>
+    <li><strong>Programming Languages</strong>: Particularly in C#, JSON, and YAML processing</li>
+    <li><strong>Tool Usage</strong>: Especially in Test Development contexts</li>
+    <li><strong>Front-end Development</strong>: With standout performance in Animation tasks</li>
+    <li><strong>Game Development</strong>: Specifically in Player Mechanics</li>
+    <li><strong>Cloud Computing</strong> and <strong>Legal Reasoning</strong> applications</li>
+    <li><strong>Roleplay Scenarios</strong>: Particularly in Realistic School settings</li>
+</ul>
+
+<h2>3. Key Weaknesses Needing Improvement</h2>
+<p class="weakness">The model demonstrates <strong>consistent underperformance</strong> (ranking 11th, difference of +4) across several critical domains:</p>
+<ul>
+    <li><strong>Data Science</strong>: Particularly in Model Creation tasks</li>
+    <li><strong>Basic Cognition</strong>: Struggles with Fact Recall operations</li>
+    <li><strong>Applied Sciences</strong>: Performance gaps in Food Science and Health Sciences</li>
+    <li><strong>Arts & Culture</strong>: Specifically in Music-related knowledge</li>
+    <li><strong>Natural Sciences</strong>: Notable weaknesses in Chemistry</li>
+    <li><strong>Advanced Mathematics</strong>: Underperforms in Algebraic Geometry, Complex Analysis, and Fourier Analysis</li>
+</ul>
+
+<h2>4. Hypotheses for Performance Anomalies</h2>
+<ul>
+    <li><strong>Training Data Imbalance</strong>: The model likely received more extensive training on programming-related tasks and technical domains compared to scientific and mathematical subjects</li>
+    <li><strong>Architectural Biases</strong>: The model architecture may be particularly optimized for structured data processing (JSON/YAML) and code generation tasks</li>
+    <li><strong>Evaluation Metric Mismatch</strong>: Some weaknesses may reflect evaluation criteria that don't align perfectly with the model's actual capabilities</li>
+    <li><strong>Domain Complexity</strong>:
+        The underperformance in advanced mathematics and specialized sciences suggests possible limitations in handling highly technical or abstract reasoning tasks</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<div class="recommendation">
+    <ul>
+        <li><strong>Targeted Retraining</strong>: Prioritize additional training on mathematical subfields (especially analysis and algebra) and scientific domains showing consistent weaknesses</li>
+        <li><strong>Data Augmentation</strong>: Expand training datasets for underperforming areas, particularly chemistry, health sciences, and music-related content</li>
+        <li><strong>Specialized Fine-tuning</strong>: Develop domain-specific adapters for weak areas while preserving strengths in programming and technical tasks</li>
+        <li><strong>Evaluation Framework Enhancement</strong>: Reassess evaluation metrics for basic cognition tasks to ensure they accurately measure factual recall capabilities</li>
+        <li><strong>Hybrid Approach</strong>: Consider integrating external tools or knowledge bases for fact-intensive domains where the model shows consistent weaknesses</li>
+        <li><strong>Progressive Learning</strong>: Implement curriculum learning strategies to gradually introduce complex mathematical and scientific concepts during training</li>
+    </ul>
+</div>
+
+</body>
+</html></div>
+</div>
+<h2>Model: deepseek-r1-250120</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analysis: deepseek-r1-250120</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 10px; }
+        .strength { color: green; }
+        .weakness { color: red; }
+        .recommendation { color: blue; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Model deepseek-r1-250120</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model demonstrates a strong overall performance, ranking <strong>4th out of 21</strong> models in the evaluation. This places it in the top quintile of performers, indicating robust general capabilities. However, the presence of <strong>105 worse-performing nodes</strong> with significant performance gaps (difference ≥ 4) highlights notable domain-specific weaknesses that require attention.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li>The model shows <span class="strength"><strong>no significantly better-performing nodes</strong></span> compared to its peers, indicating that it does not underperform in any specific area relative to its overall ranking.</li>
+    <li>Its strong overall ranking suggests competence across a broad range of tasks, particularly in domains not listed among the weaknesses.</li>
+</ul>
+
+<h2>3. Key Weaknesses Needing Improvement</h2>
+<ul>
+    <li><span class="weakness"><strong>Data Languages (e.g., SQL)</strong></span>: Performance lags significantly, with a ranking drop to 8.</li>
+    <li><span class="weakness"><strong>Domain-specific Languages (e.g., CUDA)</strong></span>: Shows notable weakness in specialized programming contexts.</li>
+    <li><span class="weakness"><strong>Markup Languages (e.g., LaTeX)</strong></span>: Underperforms in structured document formatting tasks.</li>
+    <li><span class="weakness"><strong>Scripting Languages (e.g., Perl, Ruby)</strong></span>: Demonstrates deficiencies in dynamic language processing.</li>
+    <li><span class="weakness"><strong>Auxiliary Functions (e.g., Conceptual Q&A, Fact Recall)</strong></span>: Struggles with knowledge retrieval and abstract reasoning.</li>
+    <li><span class="weakness"><strong>Data Processing (e.g., Data Manipulation, Database tasks)</strong></span>: Performance is suboptimal in handling and transforming data.</li>
+</ul>
+
+<h2>4. Hypotheses on Possible Causes</h2>
+<ul>
+    <li><strong>Training Data Gaps</strong>: The model may have been trained on insufficient or low-quality data for specialized languages (SQL, CUDA) and scripting languages (Perl, Ruby).</li>
+    <li><strong>Task Complexity</strong>: Auxiliary functions like Conceptual Q&A and Fact Recall may require more nuanced understanding, which the model lacks due to architectural or data limitations.</li>
+    <li><strong>Evaluation Bias</strong>: The benchmark may emphasize certain syntactic or semantic features that the model hasn't optimized for, leading to lower scores in specific domains.</li>
+    <li><strong>Generalization Issues</strong>: The model might prioritize broad competency over depth in niche areas, resulting in weaknesses where specialized knowledge is critical.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<ul>
+    <li><span class="recommendation"><strong>Augment Training Data</strong></span>: Curate and include more high-quality examples for underperforming domains, such as SQL queries, CUDA code, and scripting language snippets.</li>
+    <li><span class="recommendation"><strong>Fine-Tuning</strong></span>: Implement targeted fine-tuning on weak areas using domain-specific datasets to enhance performance in Data Languages, Markup Languages, and Auxiliary Functions.</li>
+    <li><span class="recommendation"><strong>Architectural Adjustments</strong></span>: Explore modifications to the model architecture to better handle structured data and complex query processing.</li>
+    <li><span class="recommendation"><strong>Benchmark-Specific Optimization</strong></span>: Align training objectives more closely with the evaluation metrics used in these tasks to reduce performance gaps.</li>
+    <li><span class="recommendation"><strong>Regular Evaluation</strong></span>: Continuously monitor performance on these weak nodes during iterative training to track improvements and adjust strategies accordingly.</li>
+</ul>
+
+</body>
+</html></div>
+</div>
+<h2>Model: deepseek-v3-250324</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'># Performance Analysis Report: Model "deepseek-v3-250324"
+
+## 1. Overall Assessment
+
+Model "deepseek-v3-250324" demonstrates **strong overall performance**, ranking **3rd out of 21** models in the comprehensive evaluation. This indicates the model is highly competitive and performs well across most domains. However, the presence of **171 worse-performing nodes** with significant performance gaps suggests notable specialization weaknesses that require attention.
+
+## 2. Areas of Significant Strength
+
+Based on the provided data:
+- **No significantly better-performing nodes** were identified, meaning the model maintains consistent performance across most domains without extreme outliers in either direction
+- The overall ranking of 3/21 suggests **broad competency** across the evaluation framework
+- The absence of extreme positive anomalies indicates **balanced performance** without over-specialization in specific areas
+
+## 3. Key Weaknesses Requiring Improvement
+
+The model exhibits **significant performance gaps** in multiple specialized domains:
+
+**Critical Weakness Categories:**
+- **Domain-specific Programming Languages** (Excel, GLSL)
+- **JavaScript programming**
+- **Markup Languages** (Markdown)
+- **Embedded & Systems Programming** (Real-time Systems, Thread Concurrency)
+- **Technical Engineering** (Robotics, Computer Science)
+- **Mathematical Analysis** (Functional Analysis)
+- **Organizational Reasoning**
+- **Arts & Culture** (Literature, Essays)
+
+**Performance Pattern:**
+- All identified weaknesses show a **ranking difference of +4** (ranking 7 vs. overall 3)
+- This consistent gap suggests **systematic underperformance** in specialized domains rather than random deficiencies
+
+## 4. Hypotheses on Performance Anomalies
+
+**Potential Causes:**
+- **Training data imbalance** with insufficient coverage of specialized technical domains
+- **Architectural limitations** in handling domain-specific syntax and patterns
+- **Evaluation bias** toward general-purpose tasks over specialized applications
+- **Inadequate fine-tuning** for technical niche domains
+- **Tokenization challenges** with domain-specific terminology and notation
+
+## 5. Recommendations for Improvement
+
+**Immediate Actions:**
+1. **Augment training data** with focused content from weaker domains (Excel, GLSL, embedded systems)
+2. **Implement domain-specific fine-tuning** for technical programming languages
+3. **Enhance tokenization** for specialized terminology in markup languages and technical domains
+
+**Strategic Initiatives:**
+1. **Develop specialized adapter modules** for weak performance areas
+2. **Create balanced evaluation benchmarks** to prevent domain bias
+3. **Implement curriculum learning** approach focusing on weaker domains
+4. **Establish continuous monitoring** for domain-specific performance metrics
+
+**Quality Assurance:**
+1. **Regular testing** against domain-specific benchmarks
+2. **Performance delta threshold alerts** for early detection of regression
+3. **A/B testing** for improvement validation in targeted domains
+
+*This analysis indicates a fundamentally strong model requiring targeted improvements in specialized domains to achieve more consistent performance across all evaluation categories.*</div>
+</div>
+<h2>Model: doubao-1-5-pro-32k-250115</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'># Performance Analysis Report: Model "doubao-1-5-pro-32k-250115"
+
+## 1. Overall Assessment
+
+The model "doubao-1-5-pro-32k-250115" demonstrates a **mixed performance profile** with an overall ranking of 14 out of 21 models in the benchmark. While it shows notable strengths in specific mathematical domains, it underperforms significantly in reasoning, roleplay, and certain coding tasks, resulting in a below-median overall position.
+
+## 2. Areas of Significant Strength
+
+The model exhibits **exceptional performance** in several specialized areas:
+
+- **Mathematical Subfields**: Particularly strong in:
+  - Boolean Algebra (Rank: 4, Difference: -10)
+  - Complex Analysis (Rank: 4, Difference: -10)
+  - Applied Mathematics/Games (Rank: 4, Difference: -10)
+  - Automata Theory (Rank: 4, Difference: -10)
+  - Real Analysis (Rank: 5, Difference: -9)
+
+- **Visualization Tasks**: Strong performance in Geometric Drawing (Rank: 5, Difference: -9)
+
+- **Domain-Specific Languages**: Excel/Spreadsheets (Rank: 6, Difference: -8)
+
+- **Natural Sciences**: Chemistry knowledge (Rank: 6, Difference: -8)
+
+## 3. Key Weaknesses Requiring Improvement
+
+The model shows **significant underperformance** in several critical areas:
+
+- **Reasoning Capabilities**:
+  - Causal Reasoning (Rank: 18, Difference: +4)
+  - Explanatory Reasoning (Rank: 18, Difference: +4)
+  - Conceptual Understanding (Rank: 18, Difference: +4)
+  - Theoretical tasks (Rank: 18, Difference: +4)
+
+- **Roleplay and Interactive Tasks**:
+  - Various style types including Experimental and Humorous/Satirical (Rank: 18, Difference: +4)
+  - Analytical tasks involving Culture (Rank: 18, Difference: +4)
+  - Realistic Interaction (Rank: 18, Difference: +4)
+  - Sensory Simulation themes (Rank: 18, Difference: +4)
+
+- **Platform Comparison Tasks** in coding (Rank: 18, Difference: +4)
+
+## 4. Hypotheses on Performance Anomalies
+
+Based on the performance patterns, several hypotheses emerge:
+
+- **Training Data Imbalance**: The model appears heavily trained on mathematical and technical content while potentially lacking diversity in reasoning and interactive scenarios
+
+- **Specialized Architecture**: The model may be optimized for structured problem-solving rather than open-ended reasoning or creative tasks
+
+- **Evaluation Bias**: Possible misalignment between training objectives and benchmark evaluation criteria for reasoning and roleplay tasks
+
+- **Context Length Limitations**: Despite the 32k context, the model may struggle with complex causal chains and interactive scenarios requiring extended context retention
+
+## 5. Recommendations for Improvement
+
+- **Data Diversification**: Augment training data with more reasoning chains, causal relationships, and interactive dialogue examples
+
+- **Fine-Tuning Strategy**: Implement targeted fine-tuning on underperforming domains, particularly:
+  - Causal and explanatory reasoning tasks
+  - Roleplay and interactive scenarios
+  - Cultural and contextual understanding
+
+- **Architecture Review**: Evaluate whether the model architecture adequately supports complex reasoning and long-context interactions
+
+- **Benchmark-Specific Optimization**: Align training objectives more closely with the evaluation criteria for reasoning and interactive tasks
+
+- **Progressive Learning**: Implement curriculum learning approaches to gradually introduce more complex reasoning tasks
+
+*This analysis indicates a highly specialized model with exceptional mathematical capabilities but requiring significant improvement in general reasoning and interactive applications to achieve balanced performance across domains.*</div>
+</div>
+<h2>Model: gemma-3-27b-it</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analysis: gemma-3-27b-it</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #3498db; margin-top: 20px; }
+        .strength { color: #27ae60; }
+        .weakness { color: #e74c3c; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: gemma-3-27b-it</h1>
+    
+    <h2>1. Overall Assessment</h2>
+    <p>Model <strong>gemma-3-27b-it</strong> demonstrates a <strong>mixed performance profile</strong>, ranking 5th out of 21 models in the overall comparison. While it shows exceptional capabilities in knowledge-based domains, it exhibits significant underperformance in coding-related tasks, resulting in a polarized performance distribution.</p>
+    
+    <h2>2. Areas of Significant Strength</h2>
+    <p class="strength"><strong>Knowledge Domains Show Exceptional Performance</strong></p>
+    <ul>
+        <li>Comprehensive superiority across all knowledge categories (85 nodes with ranking difference of -4)</li>
+        <li>Outstanding performance in Applied Sciences (Architecture, Food Science, Transportation)</li>
+        <li>Excellent results in Arts and Culture disciplines</li>
+        <li>Strong performance across all Cognitive Levels, particularly Applied Analysis</li>
+        <li>Notable strength in Conceptual Understanding tasks</li>
+    </ul>
+    
+    <h2>3. Key Weaknesses Requiring Improvement</h2>
+    <p class="weakness"><strong>Severe Underperformance in Coding Capabilities</strong></p>
+    <ul>
+        <li>Critical deficiency across all programming languages (145 nodes with +4 ranking difference)</li>
+        <li>Poor performance in both Data Languages (PySpark, R) and General-purpose Languages (JavaScript, Python, Swift)</li>
+        <li>Weakness extends to Markup Languages and coding fundamentals</li>
+        <li>Systematic underperformance suggests architectural limitations in code processing</li>
+    </ul>
+    
+    <h2>4. Hypotheses for Performance Anomalies</h2>
+    <ul>
+        <li><strong>Training Data Imbalance:</strong> Likely trained on knowledge-heavy corpus with insufficient code examples</li>
+        <li><strong>Architectural Bias:</strong> Model architecture may be optimized for natural language understanding over syntactic code processing</li>
+        <li><strong>Tokenization Issues:</strong> Potential inadequate handling of code-specific tokenization patterns</li>
+        <li><strong>Task Understanding Gap:</strong> May struggle to translate problem statements into executable code logic</li>
+        <li><strong>Reasoning Mechanism:</strong> Knowledge tasks may leverage different reasoning pathways than coding tasks</li>
+    </ul>
+    
+    <h2>5. Recommendations for Improvement</h2>
+    <ul>
+        <li><strong>Data Augmentation:</strong> Increase exposure to diverse code examples and programming challenges during training</li>
+        <li><strong>Specialized Fine-tuning:</strong> Implement targeted training on code-specific datasets and programming benchmarks</li>
+        <li><strong>Architectural Adjustment:</strong> Consider incorporating code-specific attention mechanisms or modules</li>
+        <li><strong>Hybrid Approach:</strong> Develop ensemble methods combining knowledge strength with coding specialists</li>
+        <li><strong>Progressive Learning:</strong> Implement curriculum learning focusing on code comprehension before generation</li>
+        <li><strong>Evaluation Enhancement:</strong> Expand coding benchmarks to better diagnose specific failure modes</li>
+    </ul>
+    
+    <p><em>Analysis conclusion: While gemma-3-27b-it excels as a knowledge resource, its coding capabilities require substantial improvement to achieve balanced performance across domains.</em></p>
+</body>
+</html></div>
+</div>
+<h2>Model: gemma-3-4b-it</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analysis: gemma-3-4b-it</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #DC143C; }
+        .recommendation { background-color: #f9f9f9; padding: 15px; border-left: 4px solid #3498db; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: gemma-3-4b-it</h1>
+    
+    <h2>1. Overall Assessment</h2>
+    <p>The model <strong>gemma-3-4b-it</strong> ranks <strong>11th out of 21</strong> models in the benchmark, placing it in the <strong>middle tier</strong> of performance. It demonstrates notable strengths in creative and humanities-oriented tasks but exhibits significant weaknesses in coding-related domains. With <strong>219 nodes</strong> performing better than its average ranking and <strong>146 nodes</strong> underperforming, the model shows a clear bifurcation in capability distribution.</p>
+    
+    <h2>2. Areas of Significant Strength</h2>
+    <ul>
+        <li class="strength"><strong>Roleplay and Creative Tasks:</strong> The model excels in <em>Gothic, Cross-Media, and Experimental Style</em> roleplay, achieving top rankings (Rank 1, Difference: -10).</li>
+        <li class="strength"><strong>Humanities and Social Sciences:</strong> Strong performance in <em>Politics, Culture, and Historical Events</em> analysis (Rank 2, Difference: -9).</li>
+        <li class="strength"><strong>Emotional and Sensitive Themes:</strong> Demonstrates proficiency in handling <em>Erotic and Sensitive</em> thematic content (Rank 2, Difference: -9).</li>
+    </ul>
+    
+    <h2>3. Key Weaknesses Needing Improvement</h2>
+    <ul>
+        <li class="weakness"><strong>Coding and Programming:</strong> Severe underperformance across all coding tasks (Rank 15, Difference: +4), including <em>Domain-specific Languages (e.g., GDScript), JavaScript, CSS, and Data Processing</em>.</li>
+        <li class="weakness"><strong>Technical Task Handling:</strong> Struggles with <em>String Manipulation</em> and other auxiliary programming functions.</li>
+    </ul>
+    
+    <h2>4. Hypotheses for Anomalies</h2>
+    <ul>
+        <li><strong>Training Data Bias:</strong> The model was likely trained on a dataset rich in creative writing, humanities, and roleplay content but lacking in diverse and complex coding examples.</li>
+        <li><strong>Architectural Limitations:</strong> The 4B parameter size may be insufficient to capture the syntactic and logical nuances required for programming languages, especially domain-specific ones.</li>
+        <li><strong>Task Complexity Mismatch:</strong> Coding tasks often require precise output and structured reasoning, which may not align with the model's creative and associative strengths.</li>
+    </ul>
+    
+    <h2>5. Recommendations for Improvement</h2>
+    <div class="recommendation">
+        <ul>
+            <li><strong>Enhance Coding Datasets:</strong> Fine-tune the model on a curated dataset of code examples, documentation, and programming challenges across multiple languages, with emphasis on domain-specific languages like GDScript.</li>
+            <li><strong>Task-Specific Tuning:</strong> Implement reinforcement learning from human feedback (RLHF) or supervised fine-tuning (SFT) specifically for technical tasks to improve precision and logical consistency.</li>
+            <li><strong>Hybrid Approach:</strong> Integrate external tools or APIs for code execution and validation to offload complex programming tasks, ensuring reliable output in technical domains.</li>
+            <li><strong>Benchmark-Driven Development:</strong> Continuously evaluate the model on coding-specific benchmarks (e.g., HumanEval, MBPP) to track progress and identify remaining gaps.</li>
+        </ul>
+    </div>
+</body>
+</html></div>
+</div>
+<h2>Model: gpt-4o-2024-11-20</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Analysis: gpt-4o-2024-11-20</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Model gpt-4o-2024-11-20</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model demonstrates a <strong>mid-tier performance</strong>, ranking 9th out of 21 models. While it shows significant strengths in creative and roleplay domains, it underperforms in several technical and mathematical areas. The number of nodes with better performance (143) significantly outweighs those with worse performance (51), indicating a generally competent model with specific, concentrated weaknesses.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<p class="strength">The model excels in <strong>creative and narrative tasks</strong>, with top-ranking performance (Ranking: 1) in numerous subdomains, including:</p>
+<ul>
+    <li><strong>Roleplay Themes:</strong> Emotional/Erotic, Sensory Simulation, and Religion</li>
+    <li><strong>Writing Styles:</strong> Steampunk and various literary forms (Fantasy, Parody, Poetry)</li>
+    <li><strong>Creative Writing Domains:</strong> Visual Arts, Vocabulary Practice, and News Reporting</li>
+</ul>
+<p>These strengths suggest robust capabilities in generating engaging, imaginative, and stylistically diverse content.</p>
+
+<h2>3. Key Weaknesses</h2>
+<p class="weakness">Notable weaknesses are concentrated in <strong>technical and structured domains</strong>, with several nodes underperforming by a difference of 4 (e.g., Ranking: 13 vs. overall 9), including:</p>
+<ul>
+    <li><strong>Programming:</strong> MQL (Finance), Markup Languages (CSS, HTML, SVG)</li>
+    <li><strong>Technical AI Domains:</strong> Reinforcement Learning, Front-end Development (Animation, UI/UX Design)</li>
+    <li><strong>Mathematics:</strong> Algebra (Abstract and Linear)</li>
+</ul>
+<p>These indicate a potential gap in handling precise, structured, or numerically intensive tasks.</p>
+
+<h2>4. Hypotheses on Causes</h2>
+<ul>
+    <li><strong>Training Data Bias:</strong> The model may have been trained on a corpus richer in creative writing and humanities content, with less emphasis on technical manuals, code repositories, or mathematical texts.</li>
+    <li><strong>Task Complexity:</strong> Technical domains often require precise syntax and logical rigor, which might be more challenging for generative models compared to creative tasks that allow for more flexibility and ambiguity.</li>
+    <li><strong>Fine-Tuning Focus:</strong> The model's fine-tuning may have prioritized enhancing creative storytelling and roleplay capabilities, inadvertently leaving technical proficiencies less developed.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<ul>
+    <li><strong>Augment Training Data:</strong> Increase the volume and diversity of technical, mathematical, and programming-related data in the training set to improve performance in these weaker domains.</li>
+    <li><strong>Targeted Fine-Tuning:</strong> Implement domain-specific fine-tuning sessions focused on markup languages, front-end development, and algebraic problem-solving.</li>
+    <li><strong>Hybrid Approaches:</strong> Explore integration with external tools or APIs for tasks requiring high precision (e.g., code execution, symbolic math) to complement generative strengths.</li>
+    <li><strong>Continuous Evaluation:</strong> Establish a more granular monitoring system for technical subdomains to quickly identify and address emerging performance gaps in future iterations.</li>
+</ul>
+
+</body>
+</html></div>
+</div>
+<h2>Model: gpt-oss-120b</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analysis: gpt-oss-120b</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strong { color: #27ae60; font-weight: bold; }
+        .weak { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Performance Analysis Report: gpt-oss-120b</h1>
+    
+    <h2>1. Overall Assessment</h2>
+    <p>The model demonstrates <span class="strong">exceptional overall performance</span>, securing the top ranking (1 out of 21 models). This indicates superior capability across a broad spectrum of tasks compared to its peers. However, the presence of 302 nodes with significant performance anomalies (all underperforming) suggests notable specialization gaps despite the strong aggregate ranking.</p>
+    
+    <h2>2. Areas of Significant Strength</h2>
+    <ul>
+        <li><strong>Broad Dominance:</strong> Ranked #1 overall, implying strengths across most evaluated domains not listed as anomalous.</li>
+        <li><strong>Balanced Proficiency:</strong> No nodes were identified as significantly better-performing, indicating consistent high performance without extreme outliers on the positive side.</li>
+    </ul>
+    
+    <h2>3. Key Weaknesses Needing Improvement</h2>
+    <p><span class="weak">302 nodes underperform</span> with a consistent ranking difference of +4 (ranking 5 vs. ideal 1), indicating specific areas where the model lags. Notable weak domains include:</p>
+    <ul>
+        <li><strong>Domain-specific Languages:</strong> Excel (Spreadsheets) and Solidity (Blockchain)</li>
+        <li><strong>General-purpose Languages:</strong> Java</li>
+        <li><strong>Technical Domains:</strong> Code Conversion, Firmware Development, Cryptographic Programming</li>
+        <li><strong>Knowledge Tasks:</strong> Risk Assessment, Real Estate, Literature, Operational Guidance</li>
+    </ul>
+    
+    <h2>4. Hypotheses on Causes of Anomalies</h2>
+    <ul>
+        <li><strong>Training Data Gaps:</strong> Underrepresentation of niche domains (e.g., Solidity, firmware) in training corpus.</li>
+        <li><strong>Task Complexity:</strong> Weaknesses in synthesis/evaluation tasks (e.g., Risk Assessment) may indicate limitations in complex reasoning.</li>
+        <li><strong>Specialization Trade-off:</strong> The model's generalist strength may come at the cost of depth in specialized areas.</li>
+        <li><strong>Evaluation Bias:</strong> Benchmarks for these nodes might emphasize knowledge or skills not fully captured during training.</li>
+    </ul>
+    
+    <h2>5. Recommendations for Improvement</h2>
+    <ul>
+        <li><strong>Targeted Data Augmentation:</strong> Curate training data for underperforming domains (e.g., blockchain code, technical manuals, literature analysis).</li>
+        <li><strong>Fine-tuning:</strong> Implement domain-specific fine-tuning on weak nodes using specialized datasets.</li>
+        <li><strong>Hybrid Approaches:</strong> Integrate external tools or knowledge bases for niche areas (e.g., Excel functions, cryptographic libraries).</li>
+        <li><strong>Evaluation Calibration:</strong> Reassess benchmark design for anomalous nodes to ensure they align with real-world use cases.</li>
+        <li><strong>Continuous Monitoring:</strong> Track these nodes in future iterations to measure improvement post-interventions.</li>
+    </ul>
+</body>
+</html></div>
+</div>
+<h2>Model: gpt-oss-20b</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Performance Analysis: gpt-oss-20b</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: Model gpt-oss-20b</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model <strong>gpt-oss-20b</strong> demonstrates a <strong>median performance</strong> overall, ranking 10th out of 21 models. While it exhibits significant strengths in several technical and coding-related domains, it underperforms notably in areas related to roleplay, creativity, and certain knowledge-intensive tasks. The distribution of anomalies (262 better-performing nodes vs. 135 worse-performing) suggests a <em>specialized rather than generalized</em> capability profile.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li class="strength"><strong>Technical and Coding Domains</strong>: Exceptional performance (ranking #1) in:
+        <ul>
+            <li>Markup languages (e.g., Markdown)</li>
+            <li>Scripting languages (e.g., Ruby)</li>
+            <li>Development tasks (Code Conversion, Comment Generation)</li>
+            <li>Embedded systems (Firmware, Hardware Interaction, Sensors)</li>
+            <li>Data Science (Model Creation)</li>
+        </ul>
+    </li>
+    <li class="strength"><strong>Auxiliary and Educational Functions</strong>: Strong results in Learning Resources and other supportive tasks.</li>
+</ul>
+
+<h2>3. Key Weaknesses Needing Improvement</h2>
+<ul>
+    <li class="weakness"><strong>Roleplay and Creative Simulation</strong>:
+        <ul>
+            <li>Historical Events analysis</li>
+            <li>Interpretation and Symbolic Analysis</li>
+            <li>Multiplayer and Military Simulations</li>
+        </ul>
+    </li>
+    <li class="weakness"><strong>Arts and Culture</strong>:
+        <ul>
+            <li>Literature, particularly Poetry</li>
+        </ul>
+    </li>
+    <li class="weakness"><strong>Emotional and Fictional Themes</strong>:
+        <ul>
+            <li>Sensitive emotional contexts</li>
+            <li>Fantasy-based scenarios (e.g., Animals)</li>
+            <li>Fictional Script writing</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>4. Hypotheses on Causes of Anomalies</h2>
+<ul>
+    <li><strong>Training Data Bias</strong>: The model was likely trained on a corpus rich in technical documentation, code repositories, and STEM-focused materials, but lacking in creative writing, roleplay datasets, and nuanced cultural content.</li>
+    <li><strong>Architectural Limitations</strong>: The 20B parameter count may be insufficient to capture the complexity and subtleties required for high-quality roleplay and symbolic interpretation tasks.</li>
+    <li><strong>Task Formulation</strong>: The underperformance in multi-turn interactions (e.g., Multiplayer roleplay) suggests weaknesses in context retention and dynamic scenario handling.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<ul>
+    <li><strong>Data Augmentation</strong>: Curate and incorporate diverse datasets covering literature, poetry, historical narratives, and roleplay dialogues to balance domain representation.</li>
+    <li><strong>Fine-Tuning</strong>: Implement targeted fine-tuning on weak nodes (e.g., using adversarial examples or synthetic data for emotional and creative tasks).</li>
+    <li><strong>Hybrid Approaches</strong>: Explore retrieval-augmented generation (RAG) for knowledge-intensive weak spots (e.g., poetry analysis) to complement inherent model capabilities.</li>
+    <li><strong>Evaluation Enhancement</strong>: Develop more granular metrics for roleplay and creative tasks to better diagnose and address specific shortcomings.</li>
+</ul>
+
+</body>
+</html></div>
+</div>
+<h2>Model: hunyuan-standard-2025-02-10</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'># Performance Analysis Report: Model "hunyuan-standard-2025-02-10"
+
+## 1. Overall Assessment
+The model demonstrates a **significantly below-average performance** overall, ranking 19th out of 21 models in the benchmark comparison. With a threshold of 3 for significant anomalies, the model shows **93 areas of notable strength** and **no significant weaknesses**, indicating a highly inconsistent performance profile with substantial capability gaps in most domains.
+
+## 2. Areas of Significant Strength
+The model exhibits exceptional performance in specific niche domains, including:
+
+- **Game Localization** (Rank: 9, Difference: -10)
+- **Resume Writing** (Rank: 9, Difference: -10)
+- **Crystallography** (Rank: 10, Difference: -9)
+- **Literary Studies** (Rank: 10, Difference: -9)
+- **Physics-related Mathematics** (Rank: 11, Difference: -8)
+- **Java Programming** (Rank: 12, Difference: -7)
+- **Hardware Technology** (Rank: 12, Difference: -7)
+- **Boolean Algebra** (Rank: 12, Difference: -7)
+- **Classicist Writing Style** (Rank: 12, Difference: -7)
+- **Literary Analysis** (Rank: 12, Difference: -7)
+
+## 3. Key Weaknesses
+While no individual nodes show statistically significant underperformance relative to the overall ranking, the model's **general baseline performance is poor** (19th position). The absence of specific worse-performing nodes suggests the model's weaknesses are distributed broadly across most capability domains rather than concentrated in particular areas.
+
+## 4. Hypothesized Causes
+Potential reasons for this performance pattern include:
+
+- **Specialized training data** heavily weighted toward specific domains (writing, certain mathematical subfields, and niche technical areas)
+- **Imbalanced training distribution** with over-representation of certain topics
+- **Insufficient generalization capability** beyond specialized domains
+- **Architectural biases** that favor certain types of reasoning or language patterns
+- **Evaluation dataset mismatches** where the model excels in trained specialties but underperforms in broader applications
+
+## 5. Recommendations for Improvement
+- **Broaden training data distribution** to cover more diverse domains and tasks
+- **Implement balanced sampling strategies** during training to reduce domain bias
+- **Conduct targeted fine-tuning** on underperforming general capabilities
+- **Add regularization techniques** to improve generalization beyond specialized domains
+- **Develop more comprehensive evaluation benchmarks** to identify specific weakness patterns
+- **Consider architectural modifications** to support more balanced capability development
+- **Implement curriculum learning approaches** to gradually expand model capabilities beyond current specialties</div>
+</div>
+<h2>Model: qwen-max-2024-10-15</h2>
+<div class='llm-report'>
+<h3>LLM Analysis Report</h3>
+<div class='report-content'><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Performance Analysis: qwen-max-2024-10-15</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #444; margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .strength { color: #2E8B57; }
+        .weakness { color: #B22222; }
+        .recommendation { background-color: #f9f9f9; padding: 15px; border-left: 4px solid #3498db; }
+    </style>
+</head>
+<body>
+
+<h1>Performance Analysis Report: qwen-max-2024-10-15</h1>
+
+<h2>1. Overall Assessment</h2>
+<p>The model <strong>qwen-max-2024-10-15</strong> demonstrates a <strong>mid-tier performance</strong> overall, ranking 13th out of 21 models. While it exhibits notable strengths in specific writing and knowledge domains, it is significantly hampered by widespread weaknesses, particularly in reasoning, coding, and roleplay tasks. The number of underperforming nodes (93) far exceeds the outperforming ones (22), indicating a need for broad-based improvements to enhance its competitiveness.</p>
+
+<h2>2. Areas of Significant Strength</h2>
+<ul>
+    <li class="strength"><strong>Writing Domains:</strong> The model excels in various writing tasks, including <em>Everyday Writing (Entertainment/Travel, Sports, Shopping)</em>, <em>Professional Writing (Sports)</em>, and <em>Functional Writing (Recommendation Letters, Workplace Writing)</em>, with rankings as high as 6 (difference of -7).</li>
+    <li class="strength"><strong>Specialized Knowledge:</strong> Strong performance in <em>Military</em> (Humanities and Social Sciences) and <em>Set Theory</em> (Mathematical Foundations), ranking 7 (difference -6).</li>
+    <li class="strength"><strong>Niche Applications:</strong> Surprisingly high capability in <em>Erotic Fiction</em> (ranking 7, difference -6) and <em>Real Estate</em> (Applied Sciences, ranking 8, difference -5).</li>
+</ul>
+
+<h2>3. Key Weaknesses Needing Improvement</h2>
+<ul>
+    <li class="weakness"><strong>Coding and Technical Tasks:</strong> Poor performance in <em>Excel (Spreadsheets)</em>, <em>LaTeX</em>, and <em>Embedded Development/Hardware Technology</em> (all ranking 17, difference +4).</li>
+    <li class="weakness"><strong>Reasoning Abilities:</strong> Significant deficits in <em>Legal Reasoning</em>, <em>Philosophical Reasoning</em>, <em>Evaluation and Feedback</em>, and critical/creative thinking modes (ranking 17, difference +4).</li>
+    <li class="weakness"><strong>Roleplay and Stylistic Tasks:</strong> Underperformance in <em>Gothic</em> and other dark style roleplay (ranking 17, difference +4).</li>
+    <li class="weakness"><strong>Broad Scope:</strong> Weaknesses span 83+ additional nodes, indicating systemic issues in diverse areas beyond those highlighted.</li>
+</ul>
+
+<h2>4. Hypotheses on Causes of Anomalies</h2>
+<ul>
+    <li><strong>Training Data Imbalance:</strong> The model may have been trained on a dataset rich in general and creative writing content but lacking in technical, reasoning, and specialized domain materials.</li>
+    <li><strong>Architectural Biases:</strong> The model's architecture might be optimized for generative writing tasks at the expense of structured reasoning and technical precision.</li>
+    <li><strong>Fine-Tuning Gaps:</strong> Insufficient fine-tuning on coding, logical reasoning, and evaluative tasks could explain the consistent underperformance in these areas.</li>
+    <li><strong>Context Handling Limitations:</strong> Difficulties in managing complex, multi-step reasoning or technical contexts may lead to errors in coding and critical thinking tasks.</li>
+</ul>
+
+<h2>5. Recommendations for Improvement</h2>
+<div class="recommendation">
+    <ul>
+        <li><strong>Enhance Technical Training:</strong> Incorporate more diverse data from coding languages (especially domain-specific ones like Excel and LaTeX), embedded systems, and hardware technology.</li>
+        <li><strong>Boost Reasoning Capabilities:</strong> Integrate structured reasoning datasets, including legal texts, philosophical debates, and evaluative tasks, to improve logical and critical thinking.</li>
+        <li><strong>Expand Roleplay Training:</strong> Include a wider variety of stylistic and roleplay scenarios, particularly focusing on underperforming areas like dark and gothic styles.</li>
+        <li><strong>Balanced Fine-Tuning:</strong> Prioritize fine-tuning on weak nodes identified (e.g., reasoning modes, technical domains) to address performance gaps without degrading strengths.</li>
+        <li><strong>Robust Evaluation:</strong> Implement continuous evaluation across all 93+ weak nodes during development to track improvements and prevent regressions.</li>
+    </ul>
+</div>
+
+</body>
+</html></div>
+</div>
+    <div class='footer'>
+        <p>Automated Weakness Analysis Report - Generated by LLM Analysis</p>
+    </div>
+</body>
+</html>
