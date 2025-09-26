@@ -137,6 +137,258 @@
             margin-bottom: 10px;
         }
 
+        /* Progress Bar Styles */
+        .progress-wrapper {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-message {
+            font-size: 16px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 12px;
+            background-color: #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 6px;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .progress-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            min-width: 40px;
+            text-align: right;
+        }
+
+        .progress-details {
+            font-size: 13px;
+            color: #6c757d;
+            text-align: center;
+            min-height: 16px;
+            font-style: italic;
+        }
+
+        /* Error Container Styles */
+        .error-container {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border: 2px solid #feb2b2;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(254, 178, 178, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .error-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #c53030;
+            margin-bottom: 12px;
+        }
+
+        .error-message {
+            font-size: 16px;
+            color: #742a2a;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .error-tip {
+            background: #fff;
+            border: 1px solid #feb2b2;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 14px;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .error-tip strong {
+            color: #c53030;
+        }
+
+        .error-tip code {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #2d3748;
+            display: inline-block;
+            margin: 0 2px;
+        }
+
+        .retry-button {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(197, 48, 48, 0.3);
+        }
+
+        .retry-button:hover {
+            background: linear-gradient(135deg, #c53030 0%, #9c2626 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(197, 48, 48, 0.4);
+        }
+
+        .retry-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(197, 48, 48, 0.3);
+        }
+
+        /* Additional styles for better integration */
+        .no-selection {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+            font-style: italic;
+            font-size: 16px;
+        }
+
+        /* Loading spinner animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Enhanced error states for different scenarios */
+        .error-container.network-error {
+            border-color: #f6ad55;
+            background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+        }
+
+        .error-container.network-error .error-title {
+            color: #c05621;
+        }
+
+        .error-container.network-error .error-message {
+            color: #744210;
+        }
+
+        .error-container.permission-error {
+            border-color: #fc8181;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+        }
+
+        /* Progress bar variants for different loading states */
+        .progress-fill.warning {
+            background: linear-gradient(90deg, #f6ad55, #dd6b20);
+        }
+
+        .progress-fill.success {
+            background: linear-gradient(90deg, #48bb78, #38a169);
+        }
+
+        .progress-fill.error {
+            background: linear-gradient(90deg, #f56565, #e53e3e);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .error-container {
+                margin: 10px;
+                padding: 16px;
+            }
+
+            .error-title {
+                font-size: 20px;
+            }
+
+            .error-message {
+                font-size: 14px;
+            }
+
+            .progress-wrapper {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .progress-message {
+                font-size: 14px;
+            }
+        }
+
         .hidden { display: none; }
     </style>
 </head>

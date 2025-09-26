@@ -71,93 +71,75 @@ function renderModelGrid(searchTerm = '') {
     });
 }
 
-async function loadAllJSON() {
-  try {
-    // Check if we're running on GitHub Pages or locally
-    const isGitHubPages = window.location.hostname.includes('github.io') ||
-                         window.location.hostname.includes('Anonymous-SCAN.github.io');
+// Progress bar utilities
+function createProgressBar(containerId, message = 'Loading...') {
+    const container = document.getElementById(containerId);
+    if (!container) return null;
 
-    let filesData;
+    const progressWrapper = document.createElement('div');
+    progressWrapper.className = 'progress-wrapper';
+    progressWrapper.innerHTML = `
+        <div class="progress-message">${message}</div>
+        <div class="progress-bar-container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="progress-text">0%</div>
+        </div>
+        <div class="progress-details"></div>
+    `;
 
-    if (isGitHubPages) {
-      // GitHub Pages implementation
-      const owner = 'Anonymous-SCAN';
-      const repo = 'SCAN';
-      const path = 'visualization_and_analysis/processed_data';
-
-      // Fetch directory listing via GitHub API
-      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
-      const files = await response.json();
-
-      // Filter JSON files and fetch their contents
-      const jsonFiles = files.filter(file => file.name.endsWith('.json'));
-      filesData = await Promise.all(
-        jsonFiles.map(async file => {
-          const resp = await fetch(file.download_url);
-          if (!resp.ok) throw new Error(`Failed to load ${file.name}`);
-          const data = await resp.json();
-          return { name: file.name.replace(/\.json$/i, ''), data };
-        })
-      );
-    } else {
-      // Local implementation
-      const listResponse = await fetch('processed_data/');
-      const listText = await listResponse.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(listText, 'text/html');
-      const links = Array.from(doc.querySelectorAll('a'))
-          .map(a => a.getAttribute('href'))
-          .filter(href => href && href.endsWith('.json'));
-
-      filesData = await Promise.all(links.map(async file => {
-          const resp = await fetch(`processed_data/${file}`);
-          const data = await resp.json();
-          return { name: file.replace(/\.json$/i, ''), data };
-      }));
-    }
-
-    // Populate global data structures (same for both implementations)
-    filesData.forEach(({ name, data }) => {
-      allData[name] = data;
-    });
-    allModels = Object.keys(allData);
-
-    // Hide loading indicator, show viewer
-    document.getElementById('loading').classList.add('hidden');
-    document.getElementById('viewer').classList.remove('hidden');
-
-    // Initial render of model grid
-    renderModelGrid();
-
-    // Default-select top 4 models by score
-    const sorted = [...allModels].sort((a, b) => {
-      const sa = allData[a]?.score || 0;
-      const sb = allData[b]?.score || 0;
-      return sb - sa;
-    });
-    const topModels = sorted.slice(0, 4);
-    topModels.forEach(model => {
-      selectedModels.add(model);
-      if (!selectedCategories.includes(model)) {
-        selectedCategories.push(model);
-      }
-    });
-
-    // Re-render with selections
-    renderModelGrid();
-    renderSelectedTrees();
-
-  } catch (error) {
-    document.getElementById('loading').classList.add('hidden');
-    const errEl = document.getElementById('error');
-    errEl.classList.remove('hidden');
-    errEl.textContent = `Error: ${error.message}`;
-  }
+    container.appendChild(progressWrapper);
+    return progressWrapper;
 }
 
-async function loadAllQueryModelData() {
+function updateProgressBar(progressWrapper, percentage, details = '') {
+    if (!progressWrapper) return;
+
+    const fill = progressWrapper.querySelector('.progress-fill');
+    const text = progressWrapper.querySelector('.progress-text');
+    const detailsEl = progressWrapper.querySelector('.progress-details');
+
+    if (fill) fill.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
+    if (text) text.textContent = `${Math.round(percentage)}%`;
+    if (detailsEl) detailsEl.textContent = details;
+}
+
+function removeProgressBar(progressWrapper) {
+    if (progressWrapper && progressWrapper.parentNode) {
+        progressWrapper.parentNode.removeChild(progressWrapper);
+    }
+}
+
+function showError(containerId, title, message, showLocalDeployTip = true) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-container';
+    errorDiv.innerHTML = `
+        <div class="error-icon">⚠️</div>
+        <div class="error-title">${title}</div>
+        <div class="error-message">${message}</div>
+        ${showLocalDeployTip ? `
+        <div class="error-tip">
+            <strong>💡 Tip:</strong> If you're experiencing loading issues, consider running this application locally:
+            <br><br>
+            <code>python -m http.server 8000</code>
+            <br><br>
+            Then visit <code>http://localhost:8000</code> in your browser.
+        </div>
+        ` : ''}
+        <button class="retry-button" onclick="location.reload()">🔄 Retry</button>
+    `;
+
+    container.appendChild(errorDiv);
+}
+
+async function loadAllJSON() {
+    const loadingContainer = document.getElementById('loading');
+    const progressBar = createProgressBar('loading', 'Loading model data...');
+
     try {
         // Check if we're running on GitHub Pages or locally
         const isGitHubPages = window.location.hostname.includes('github.io') ||
@@ -166,6 +148,8 @@ async function loadAllQueryModelData() {
         let filesData;
 
         if (isGitHubPages) {
+            updateProgressBar(progressBar, 10, 'Fetching file list from GitHub API...');
+
             // GitHub Pages implementation
             const owner = 'Anonymous-SCAN';
             const repo = 'SCAN';
@@ -174,18 +158,182 @@ async function loadAllQueryModelData() {
             // Fetch directory listing via GitHub API
             const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
             const response = await fetch(apiUrl);
-            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+            if (!response.ok) {
+                throw new Error(`GitHub API error (${response.status}): ${response.statusText}. The repository might be private or the path doesn't exist.`);
+            }
             const files = await response.json();
+
+            updateProgressBar(progressBar, 25, `Found ${files.length} files, filtering JSON files...`);
+
+            // Filter JSON files and fetch their contents
+            const jsonFiles = files.filter(file => file.name.endsWith('.json'));
+
+            if (jsonFiles.length === 0) {
+                throw new Error('No JSON files found in the specified directory.');
+            }
+
+            updateProgressBar(progressBar, 30, `Loading ${jsonFiles.length} JSON files...`);
+
+            filesData = await Promise.all(
+                jsonFiles.map(async (file, index) => {
+                    try {
+                        const resp = await fetch(file.download_url);
+                        if (!resp.ok) throw new Error(`Failed to load ${file.name}: ${resp.statusText}`);
+                        const data = await resp.json();
+
+                        const progress = 30 + (index + 1) / jsonFiles.length * 60;
+                        updateProgressBar(progressBar, progress, `Loaded ${file.name} (${index + 1}/${jsonFiles.length})`);
+
+                        return { name: file.name.replace(/\.json$/i, ''), data };
+                    } catch (err) {
+                        console.error(`Error loading ${file.name}:`, err);
+                        throw new Error(`Failed to load ${file.name}: ${err.message}`);
+                    }
+                })
+            );
+        } else {
+            updateProgressBar(progressBar, 10, 'Fetching local directory listing...');
+
+            // Local implementation
+            const listResponse = await fetch('processed_data/');
+            if (!listResponse.ok) {
+                throw new Error(`Failed to access processed_data directory (${listResponse.status}): ${listResponse.statusText}. Make sure the directory exists and is accessible.`);
+            }
+
+            const listText = await listResponse.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(listText, 'text/html');
+            const links = Array.from(doc.querySelectorAll('a'))
+                .map(a => a.getAttribute('href'))
+                .filter(href => href && href.endsWith('.json'));
+
+            if (links.length === 0) {
+                throw new Error('No JSON files found in the processed_data directory.');
+            }
+
+            updateProgressBar(progressBar, 25, `Found ${links.length} JSON files, loading...`);
+
+            filesData = await Promise.all(links.map(async (file, index) => {
+                try {
+                    const resp = await fetch(`processed_data/${file}`);
+                    if (!resp.ok) throw new Error(`Failed to load ${file}: ${resp.statusText}`);
+                    const data = await resp.json();
+
+                    const progress = 25 + (index + 1) / links.length * 65;
+                    updateProgressBar(progressBar, progress, `Loaded ${file} (${index + 1}/${links.length})`);
+
+                    return { name: file.replace(/\.json$/i, ''), data };
+                } catch (err) {
+                    console.error(`Error loading ${file}:`, err);
+                    throw new Error(`Failed to load ${file}: ${err.message}`);
+                }
+            }));
+        }
+
+        updateProgressBar(progressBar, 95, 'Processing model data...');
+
+        // Populate global data structures (same for both implementations)
+        filesData.forEach(({ name, data }) => {
+            allData[name] = data;
+        });
+        allModels = Object.keys(allData);
+
+        if (allModels.length === 0) {
+            throw new Error('No valid model data found in the loaded files.');
+        }
+
+        updateProgressBar(progressBar, 100, `Successfully loaded ${allModels.length} models!`);
+
+        // Small delay to show completion
+        setTimeout(() => {
+            removeProgressBar(progressBar);
+
+            // Hide loading indicator, show viewer
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('viewer').classList.remove('hidden');
+
+            // Initial render of model grid
+            renderModelGrid();
+
+            // Default-select top 4 models by score
+            const sorted = [...allModels].sort((a, b) => {
+                const sa = allData[a]?.score || 0;
+                const sb = allData[b]?.score || 0;
+                return sb - sa;
+            });
+            const topModels = sorted.slice(0, 4);
+            topModels.forEach(model => {
+                selectedModels.add(model);
+                if (!selectedCategories.includes(model)) {
+                    selectedCategories.push(model);
+                }
+            });
+
+            // Re-render with selections
+            renderModelGrid();
+            renderSelectedTrees();
+        }, 500);
+
+    } catch (error) {
+        console.error('Failed to load model data:', error);
+        removeProgressBar(progressBar);
+        document.getElementById('loading').classList.add('hidden');
+
+        showError('loading',
+            'Failed to Load Model Data',
+            error.message || 'An unknown error occurred while loading the data.',
+            true
+        );
+    }
+}
+
+async function loadAllQueryModelData() {
+    const progressBar = createProgressBar('loading', 'Loading query model data...');
+
+    try {
+        // Check if we're running on GitHub Pages or locally
+        const isGitHubPages = window.location.hostname.includes('github.io') ||
+                             window.location.hostname.includes('Anonymous-SCAN.github.io');
+
+        let filesData;
+
+        if (isGitHubPages) {
+            updateProgressBar(progressBar, 10, 'Accessing GitHub repository...');
+
+            // GitHub Pages implementation
+            const owner = 'Anonymous-SCAN';
+            const repo = 'SCAN';
+            const path = 'visualization_and_analysis/processed_data';
+
+            // Fetch directory listing via GitHub API
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`GitHub API error (${response.status}): ${response.statusText}`);
+            }
+            const files = await response.json();
+
+            updateProgressBar(progressBar, 25, 'Processing file list...');
 
             // Filter JSON files
             const jsonFiles = files.filter(file => file.name.endsWith('.json'));
 
+            if (jsonFiles.length === 0) {
+                throw new Error('No JSON files found in the repository.');
+            }
+
+            updateProgressBar(progressBar, 30, `Loading ${jsonFiles.length} files...`);
+
             // Load each JSON file
-            filesData = await Promise.all(jsonFiles.map(async file => {
+            filesData = await Promise.all(jsonFiles.map(async (file, index) => {
                 try {
                     const resp = await fetch(file.download_url);
-                    if (!resp.ok) throw new Error(`Failed to load ${file.name}`);
+                    if (!resp.ok) throw new Error(`Failed to load ${file.name}: ${resp.statusText}`);
                     const data = await resp.json();
+
+                    const progress = 30 + (index + 1) / jsonFiles.length * 65;
+                    updateProgressBar(progressBar, progress, `Loaded ${file.name} (${index + 1}/${jsonFiles.length})`);
+
                     return { name: file.name.replace(/\.json$/i, ''), data };
                 } catch (err) {
                     console.error(`Error loading ${file.name}:`, err);
@@ -193,8 +341,13 @@ async function loadAllQueryModelData() {
                 }
             }));
         } else {
+            updateProgressBar(progressBar, 10, 'Accessing local files...');
+
             // Local implementation
             const listResponse = await fetch('processed_data/');
+            if (!listResponse.ok) {
+                throw new Error(`Cannot access processed_data directory (${listResponse.status}): ${listResponse.statusText}`);
+            }
             const listText = await listResponse.text();
             const parser = new DOMParser();
             const doc = parser.parseFromString(listText, 'text/html');
@@ -204,11 +357,21 @@ async function loadAllQueryModelData() {
                 .map(a => a.getAttribute('href'))
                 .filter(href => href && typeof href === 'string' && href.toLowerCase().endsWith('.json'));
 
+            if (links.length === 0) {
+                throw new Error('No JSON files found in the processed_data directory.');
+            }
+
+            updateProgressBar(progressBar, 25, `Found ${links.length} files, loading...`);
+
             // Load each JSON file
-            filesData = await Promise.all(links.map(async file => {
+            filesData = await Promise.all(links.map(async (file, index) => {
                 try {
                     const resp = await fetch(`processed_data/${file}`);
                     const data = await resp.json();
+
+                    const progress = 25 + (index + 1) / links.length * 70;
+                    updateProgressBar(progressBar, progress, `Loaded ${file} (${index + 1}/${links.length})`);
+
                     return { name: file.replace(/\.json$/i, ''), data };
                 } catch (err) {
                     console.error(`Error loading ${file}:`, err);
@@ -217,17 +380,32 @@ async function loadAllQueryModelData() {
             }));
         }
 
+        updateProgressBar(progressBar, 95, 'Finalizing data...');
+
         // Add valid data to queryModelData (same for both implementations)
+        let validCount = 0;
         filesData.forEach(item => {
             if (item) {
                 queryModelData[item.name] = item.data;
+                validCount++;
             }
         });
 
-        console.log(`Loaded ${Object.keys(queryModelData).length} model files`);
+        if (validCount === 0) {
+            throw new Error('No valid model data could be loaded.');
+        }
+
+        updateProgressBar(progressBar, 100, `Successfully loaded ${validCount} model files!`);
+
+        setTimeout(() => {
+            removeProgressBar(progressBar);
+            console.log(`Loaded ${validCount} model files`);
+        }, 300);
+
         return queryModelData;
     } catch (error) {
         console.error("Failed to load model data:", error);
+        removeProgressBar(progressBar);
         throw error;
     }
 }
@@ -374,10 +552,28 @@ function initializeQueryView() {
 }
 
 function loadCategoryTree() {
+    const progressBar = createProgressBar('categoryTree', 'Loading category tree...');
+    updateProgressBar(progressBar, 20, 'Fetching cata_tree.json...');
+
     fetch('cata_tree.json')
-        .then(response => response.json())
-        .then(data => buildCategoryTree(data))
-        .catch(handleTreeError);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load category tree (${response.status}): ${response.statusText}. Make sure cata_tree.json exists in the root directory.`);
+            }
+            updateProgressBar(progressBar, 60, 'Processing tree data...');
+            return response.json();
+        })
+        .then(data => {
+            updateProgressBar(progressBar, 90, 'Building tree structure...');
+            setTimeout(() => {
+                removeProgressBar(progressBar);
+                buildCategoryTree(data);
+            }, 200);
+        })
+        .catch(error => {
+            removeProgressBar(progressBar);
+            handleTreeError(error);
+        });
 }
 
 function buildCategoryTree(treeData) {
@@ -430,6 +626,11 @@ function renderRankings() {
     const container = document.getElementById('rankingsTable');
     container.innerHTML = '';
 
+    if (selectedNodes.size === 0) {
+        container.innerHTML = '<div class="no-selection">Please select categories from the tree above to view rankings.</div>';
+        return;
+    }
+
     Array.from(selectedNodes).forEach(path => {
         // 创建列容器
         const column = document.createElement('div');
@@ -471,6 +672,10 @@ function getNestedValue(obj, path) {
 }
 
 function handleTreeError(error) {
-    const container = document.getElementById('rankingsTable');
-    container.innerHTML = `<div class="error">Error loading category tree: ${error.message}</div>`;
+    const container = document.getElementById('categoryTree');
+    showError('categoryTree',
+        'Failed to Load Category Tree',
+        error.message || 'An unknown error occurred while loading the category tree.',
+        true
+    );
 }
